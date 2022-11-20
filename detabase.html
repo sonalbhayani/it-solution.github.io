@@ -1,0 +1,35 @@
+<html>
+<?php
+
+    $con=mysqli_connect("localhost","root","","texibook");
+    $nm=$_POST['name'];
+    $mob=$_POST['mob'];
+    $pua=$_POST['pua'];
+    $da=$_POST['da'];
+    $dat=$_POST['date'];
+    $mon=$_POST['month'];
+    $tm=$_POST['time'];
+    $pr=$_POST['person'];
+    $cr=$_POST['car'];
+    $dr=$_POST['driver'];
+
+   /* echo "NAME = ".$nm;
+    echo "<br>Email = ".$eml;
+    echo "<br>Mobile = ".$mob;
+    echo "<br>password = ".$psw;
+    echo "<br>address = ".$ads;*/
+
+    $ins="insert into booknow(`name`,`number`,`pickupaddress`,`dropaddress`,`date`,`month`,`time`,`person`,`car`,`driver`) values('$nm','$mob','$pua','$da','$dat','$mon','$tm','$pr','$cr','$dr')";
+    $res=mysqli_query($con,$ins);
+ if($res==true)
+ { ?>
+    <h1 style="text-align:center; background-color:lightblue; padding: 20px;">"sucessfull"</h1>
+ <?php
+ }
+ else
+ { ?>
+    <h1 style="text-align:center; background-color:rgba(235, 22, 22, 0.377); padding: 20px;">"unsucessfull "</h1>
+   <?php 
+ }
+?> 
+</html>
